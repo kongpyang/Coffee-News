@@ -30,11 +30,10 @@ app.get("/", function (req, res) {
 app.get("/scrape", function (req, res) {
 
     // Make a request via axios for the news section of `ycombinator`
-    axios.get("https://news.ycombinator.com/").then(function (response) {
+    axios.get("https://minnesota.cbslocal.com/category/news").then(function (response) {
 
         // Load the html body from axios into cheerio
         var $ = cheerio.load(response.data);
-
         var results = [];
 
         // For each element with a "title" class
