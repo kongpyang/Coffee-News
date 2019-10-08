@@ -29,13 +29,15 @@
   // 1: On Load
   // ==========
   
-  // First thing: ask the back end for json with all animals
+  // First thing: ask the back end for json 
   $.getJSON("/all", function(data) {
     // Call our function to generate a table body
     for(var i = 0; i < data.length; i++){
         $("#results").append("<div><h5>" + data[i].title + "</h5>" +
-        "<p>" + data[i].summary +
-        "<p><a href='" + data[i].link + "'>" + data[i].link + "</a></p></div>")
+        // "<p>" + data[i].summary +
+        "<p><a href='" + data[i].link + "'>" + data[i].link + "</a></p></div>" +
+        "<button class='btn btn-primary mr-2 saveBtn'>Save</button>" +
+        "<button class='btn btn-danger deleteBtn'>Delete</button>")
     }
   });
   
